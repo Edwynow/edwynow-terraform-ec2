@@ -5,6 +5,11 @@ terraform {
       version = "~> 6.0"
     }
   }
+  backend "s3" {
+    bucket = "edwynow-terraform-states"
+    key    = "edwynow-ec2/terraform.tfstate"
+    region = "eu-west-2"
+  }
 }
 
 # Configure the AWS Provider
